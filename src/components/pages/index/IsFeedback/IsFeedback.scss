@@ -1,0 +1,131 @@
+@font-face {
+  font-family: "NunitoSans";
+  src: url("http://localhost:8873/NunitoSans.ttf");
+}
+
+.IsFeedback {
+  position: relative;
+  background: linear-gradient(45deg, #393f46, #5c6c70);
+  display: flex;
+  .left {
+    padding: 50px;
+    width: 100%;
+    @media screen and (max-width: 850px) {
+      padding: 50px 20px;
+    }
+  }
+  h2 {
+    font-size: clamp(2rem, 10vw, 4rem);
+    background: linear-gradient(0deg, #837b7b, #ffffff);
+    height: fit-content;
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+    font-weight: 800;
+    margin-bottom: 10px;
+    padding-right: 50px;
+    @media screen and (max-width: 500px) {
+      font-weight: 900;
+      line-height: 1;
+    }
+    @media screen and (max-width: 850px) {
+      font-size: clamp(2rem, 10vw, 3rem);
+    }
+    @media screen and (max-width: 460px) {
+      font-size: 45px;
+    }
+    @media screen and (max-width: 365px) {
+      font-size: 40px;
+    }
+    span {
+      position: relative;
+      display: inline;
+      img {
+        position: absolute;
+        top: 15px;
+        width: 100px;
+        left: 10px;
+        @media screen and (max-width: 850px) {
+          top: 10px;
+          width: 45px;
+        }
+        @media screen and (max-width: 460px) {
+          top: 10px;
+          width: 35px;
+        }
+      }
+    }
+    img {
+      max-width: 50px;
+      width: 100%;
+      border-radius: 999px;
+      object-fit: cover;
+      margin-right: 15px;
+    }
+  }
+  .img {
+    width: 100%;
+    @media screen and (max-width: 650px) {
+      display: none;
+    }
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      user-select: none;
+      pointer-events: none;
+    }
+  }
+  .form {
+    margin-top: 40px;
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      input,
+      textarea,
+      button {
+        padding: 15px;
+        font-size: 17px;
+        border: none;
+        outline: none;
+        background-color: #5b6469;
+        color: #fff;
+        border-radius: 5px;
+        font-family: "NunitoSans", sans-serif;
+        outline: 2px solid #76797b00;
+        @media screen and (max-width: 850px) {
+          font-size: 14px;
+        }
+        &::placeholder {
+          color: #9a9a9a;
+          font-weight: 800;
+        }
+      }
+      input,
+      textarea {
+        transition: outline 0.15s ease-in-out;
+        &:focus {
+          outline: 2px solid #76797b;
+        }
+      }
+      textarea {
+        resize: vertical;
+        height: 170px;
+        min-height: 70px;
+        max-height: 250px;
+      }
+      button {
+        cursor: pointer;
+        font-weight: 800;
+        background-color: #91989b;
+        color: #050508;
+        transition: background-color 0.15s ease-in-out, color 0.15s ease-in-out;
+        &:hover {
+          background-color: #050508;
+          color: #91989b;
+        }
+      }
+    }
+  }
+}

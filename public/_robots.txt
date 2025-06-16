@@ -1,0 +1,6 @@
+User-agent: *
+Allow: /
+Disallow: /admin
+Disallow: /views
+
+Sitemap: https://gki-webik.ru/sitemap.xml

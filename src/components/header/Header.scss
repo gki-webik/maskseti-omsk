@@ -1,0 +1,133 @@
+header {
+  display: flex;
+  gap: 40px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  width: 100%;
+  height: 70px;
+  align-items: center;
+  padding: 0 40px;
+  z-index: 999;
+  justify-content: space-between;
+  background-color: #51575f60;
+  backdrop-filter: blur(30px);
+  border-bottom: 1px solid #ffffff36;
+  .logo {
+    display: flex;
+    align-items: center;
+    img {
+      max-width: 45px;
+      aspect-ratio: 1/1;
+      border-radius: 999px;
+      object-fit: cover;
+    }
+  }
+  .links {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    @media screen and (max-width: 990px) {
+      display: none;
+    }
+  }
+  .menu {
+    display: none;
+  }
+  @media screen and (max-width: 990px) {
+    .menu {
+      display: flex;
+      cursor: pointer;
+      align-items: center;
+      justify-content: center;
+      height: 100%;
+      padding: 10px;
+      span {
+        position: relative;
+        width: 30px;
+        height: 2.2px;
+        background-color: #fff;
+        &::after {
+          content: "";
+          position: absolute;
+          top: -7px;
+          width: 30px;
+          height: 2.5px;
+          background-color: #fff;
+        }
+        &::before {
+          content: "";
+          position: absolute;
+          top: 7px;
+          width: 30px;
+          height: 2.5px;
+          background-color: #fff;
+        }
+      }
+    }
+    .links {
+      left: -100%;
+      transition: left 0.2s ease-in-out;
+      &.is-active {
+        display: flex;
+        flex-direction: column;
+        position: fixed;
+        width: 100%;
+        top: 70px;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        justify-content: flex-start;
+        background: linear-gradient(45deg, #393f46, #2b2d39);
+        height: fit-content;
+        nav {
+          display: flex;
+          flex-direction: column;
+          align-items: start;
+          padding: 20px;
+          position: relative;
+          z-index: 99;
+          @media screen and (max-width: 500px) {
+            gap: 10px;
+            &:last-child {
+              padding-top: 0;
+            }
+          }
+          a {
+            width: 100%;
+            @media screen and (max-width: 500px) {
+              font-size: 15px;
+            }
+          }
+        }
+      }
+    }
+  }
+  nav {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+    a {
+      color: #ddd;
+      text-decoration: none;
+      transition: color 0.1s ease-in-out;
+      font-size: 18px;
+      display: flex;
+      align-items: center;
+      svg {
+        max-width: 30px;
+        margin-right: 10px;
+        opacity: 0.7;
+        transition: opacity 0.1s ease-in-out;
+      }
+      &:hover {
+        color: #ffffff;
+        svg {
+          opacity: 1;
+        }
+      }
+    }
+  }
+}

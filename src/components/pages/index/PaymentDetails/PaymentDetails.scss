@@ -1,0 +1,165 @@
+.PaymentDetails {
+  position: relative;
+  padding: 50px;
+  overflow: hidden;
+  background: linear-gradient(45deg, #393f46, #2b2d39);
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  @media screen and (max-width: 1065px) {
+    flex-direction: column;
+  }
+  @media screen and (max-width: 850px) {
+    padding: 50px 20px;
+  }
+  h2 {
+    font-size: clamp(2rem, 10vw, 10rem);
+    height: fit-content;
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+    -webkit-text-stroke: 1px #c2c6be;
+    text-stroke: 1px #c2c6be;
+    font-weight: 800;
+    margin-bottom: 10px;
+    margin-top: 0;
+    padding-top: 20px;
+    @media screen and (max-width: 1065px) {
+      font-size: clamp(2rem, 15vw, 10rem);
+    }
+    @media screen and (max-width: 760px) {
+      -webkit-text-stroke: 1px #c2c6be88;
+      text-stroke: 1px #c2c6be88;
+      font-size: 150px !important;
+    }
+    @media screen and (max-width: 490px) {
+      position: absolute;
+      left: -50%;
+      top: -15px;
+    }
+    img {
+      max-width: 80px;
+      width: 100%;
+      border-radius: 999px;
+      object-fit: cover;
+      margin-right: 15px;
+      @media screen and (max-width: 1135px) {
+        max-width: 60px;
+      }
+      @media screen and (max-width: 720px) {
+        max-width: 50px;
+      }
+      @media screen and (max-width: 465px) {
+        max-width: 40px;
+      }
+    }
+  }
+  h3 {
+    font-size: clamp(1rem, 10vw, 2rem);
+    background: linear-gradient(0deg, #837b7b, #ffffff);
+    height: fit-content;
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+    font-weight: 800;
+    margin-top: -130px;
+    display: flex;
+    justify-content: start;
+    flex-direction: row-reverse;
+    margin-left: 50px;
+    position: relative;
+    z-index: 3;
+    @media screen and (max-width: 735px) {
+      margin-left: 0px;
+    }
+    @media screen and (max-width: 500px) {
+      font-weight: 900;
+      line-height: 1;
+    }
+    @media screen and (max-width: 1380px) {
+      margin-top: -100px;
+    }
+    @media screen and (max-width: 1065px) {
+      margin-top: -130px;
+    }
+    @media screen and (max-width: 979px) {
+      margin-top: -100px;
+    }
+    @media screen and (max-width: 755px) {
+      margin-top: -120px;
+    }
+    @media screen and (max-width: 490px) {
+      display: inline-block;
+      font-size: clamp(1rem, 10vw, 2.4rem);
+      margin-top: 15px;
+      span {
+        position: relative;
+        img {
+          position: absolute;
+          top: 5px;
+          width: 35px;
+          left: 10px;
+        }
+      }
+    }
+    @media screen and (max-width: 460px) {
+      font-size: 30px;
+      span {
+        img {
+          width: 30px;
+        }
+      }
+    }
+    @media screen and (max-width: 355px) {
+      font-size: 26px;
+      span {
+        img {
+          width: 25px;
+        }
+      }
+    }
+    img {
+      max-width: 40px;
+      width: 100%;
+      border-radius: 999px;
+      object-fit: cover;
+      margin-right: 15px;
+    }
+  }
+  .left {
+    display: flex;
+    flex-direction: column;
+    color: #fff;
+    p {
+      font-size: 20px;
+      line-height: 1.4;
+      @media screen and (max-width: 970px) {
+        font-size: 18px;
+      }
+      @media screen and (max-width: 615px) {
+        font-size: 15px;
+      }
+      @media screen and (max-width: 450px) {
+        font-size: 14px;
+      }
+      strong {
+        font-weight: 800;
+      }
+    }
+  }
+  .img {
+    width: 100%;
+    display: flex;
+    justify-content: end;
+    align-items: start;
+    @media screen and (max-width: 1065px) {
+      justify-content: center;
+    }
+    img {
+      max-width: 400px;
+      width: 100%;
+      user-select: none;
+      pointer-events: none;
+    }
+  }
+}

@@ -1,0 +1,21 @@
+{
+    "name": "Масксети",
+    "short_name": "Масксети",
+    "lang": "ru",
+    "theme_color": "#000000",
+    "background_color": "#000000",
+    "description": "Плетём Маскировочные сети на пожертвования и БЕСПЛАТНО передаём на фронт",
+    "display": "standalone",
+    "icons": [
+        {
+            "src": "/images/branded/192x192.png",
+            "sizes": "192x192",
+            "type": "image/png"
+        },
+        {
+            "src": "/images/branded/512x512.png",
+            "sizes": "512x512",
+            "type": "image/png"
+        }
+    ]
+}

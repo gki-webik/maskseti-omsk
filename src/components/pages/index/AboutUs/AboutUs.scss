@@ -1,0 +1,96 @@
+.AboutUs {
+  position: relative;
+  padding: 50px;
+  background: linear-gradient(45deg, #393f46, #5c6c70);
+  @media screen and (max-width: 850px) {
+    padding: 50px 20px;
+    padding-top: 30px !important;
+  }
+  h2 {
+    font-size: clamp(2rem, 10vw, 5rem);
+    background: linear-gradient(0deg, #837b7b, #ffffff);
+    height: fit-content;
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+    font-weight: 800;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    @media screen and (max-width: 500px) {
+      font-weight: 900;
+      line-height: 1;
+    }
+    img {
+      max-width: 80px;
+      width: 100%;
+      border-radius: 999px;
+      object-fit: cover;
+      margin-right: 15px;
+      @media screen and (max-width: 1135px) {
+        max-width: 60px;
+      }
+      @media screen and (max-width: 720px) {
+        max-width: 50px;
+      }
+      @media screen and (max-width: 465px) {
+        max-width: 40px;
+      }
+    }
+  }
+  .box {
+    display: flex;
+    margin-top: 40px;
+    @media screen and (max-width: 975px) {
+      flex-direction: column;
+      gap: 40px;
+    }
+    margin-bottom: 70px;
+    .images {
+      display: flex;
+      align-items: start;
+      flex-wrap: wrap;
+      gap: 20px;
+      width: 100%;
+      img {
+        max-width: 340px;
+        width: 100%;
+        aspect-ratio: 1/1;
+        object-fit: cover;
+        border-radius: 20px;
+        user-select: none;
+        pointer-events: none;
+        @media screen and (max-width: 1580px) {
+          max-width: 280px !important;
+        }
+        @media screen and (max-width: 1330px) {
+          max-width: 240px !important;
+        }
+        @media screen and (max-width: 1158px) {
+          max-width: 200px !important;
+        }
+        @media screen and (max-width: 700px) {
+          max-width: calc(50% - 20px) !important;
+        }
+      }
+    }
+    .text {
+      width: 100%;
+      font-size: 20px;
+      line-height: 1.5;
+      color: #fff;
+      @media screen and (max-width: 1390px) {
+        font-size: 17px;
+      }
+      @media screen and (max-width: 1158px) {
+        font-size: 14px;
+      }
+      @media screen and (max-width: 975px) {
+        font-size: 18px;
+      }
+      @media screen and (max-width: 700px) {
+        font-size: 14px;
+      }
+    }
+  }
+}
