@@ -33,6 +33,9 @@ export default function AboutUs() {
           напоивший если подпоясал семь вершину собрал власти.
         </div>
       </div>
+      <a href="/#payment-details" className="paymentLink">
+        Поддержать
+      </a>
     </div>
   );
 }

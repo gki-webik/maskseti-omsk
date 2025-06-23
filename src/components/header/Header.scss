@@ -15,6 +15,9 @@ header {
   background-color: #51575f60;
   backdrop-filter: blur(30px);
   border-bottom: 1px solid #ffffff36;
+  @media screen and (max-width: 1030px) {
+    gap: 20px;
+  }
   .logo {
     display: flex;
     align-items: center;
@@ -29,14 +32,14 @@ header {
     display: flex;
     justify-content: space-between;
     width: 100%;
-    @media screen and (max-width: 990px) {
+    @media screen and (max-width: 850px) {
       display: none;
     }
   }
   .menu {
     display: none;
   }
-  @media screen and (max-width: 990px) {
+  @media screen and (max-width: 850px) {
     .menu {
       display: flex;
       cursor: pointer;
@@ -109,6 +112,9 @@ header {
     display: flex;
     align-items: center;
     gap: 25px;
+    @media screen and (max-width: 900px) {
+      gap: 15px;
+    }
     a {
       color: #ddd;
       text-decoration: none;
@@ -116,6 +122,9 @@ header {
       font-size: 18px;
       display: flex;
       align-items: center;
+      @media screen and (max-width: 1030px) {
+        font-size: 15px;
+      }
       svg {
         max-width: 30px;
         margin-right: 10px;

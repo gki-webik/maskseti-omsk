@@ -13,8 +13,8 @@ export default function Home() {
         <MainBlock />
         <AboutUs />
         <LatestNews />
-        <IsFeedback />
         <PaymentDetails />
+        <IsFeedback />
       </main>
     </>
   );

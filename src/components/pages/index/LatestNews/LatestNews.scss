@@ -4,7 +4,7 @@
   overflow: hidden;
   background: linear-gradient(45deg, #393f46, #2b2d39);
   @media screen and (max-width: 850px) {
-    padding: 50px 20px;
+    padding: 70px 20px 60px 20px;
   }
   h2 {
     font-size: clamp(2rem, 10vw, 10rem);
@@ -18,6 +18,7 @@
     margin-bottom: 10px;
     display: flex;
     margin-top: 0;
+    font-family: "NunitoSans", sans-serif !important;
     padding-top: 20px;
     justify-content: center;
     @media screen and (max-width: 1065px) {
@@ -26,12 +27,13 @@
     @media screen and (max-width: 760px) {
       -webkit-text-stroke: 1px #c2c6be88;
       text-stroke: 1px #c2c6be88;
-      font-size: 150px !important;
+      top: 0px;
+      left: 40px;
+      position: absolute;
     }
     @media screen and (max-width: 490px) {
-      position: absolute;
-      left: -50%;
-      top: -15px;
+      top: 10px;
+      left: 20px;
     }
     img {
       max-width: 80px;
@@ -77,13 +79,19 @@
     @media screen and (max-width: 979px) {
       margin-top: -100px;
     }
-    @media screen and (max-width: 755px) {
-      margin-top: -120px;
+    @media screen and (max-width: 760px) {
+      margin-top: 120px;
+    }
+    @media screen and (max-width: 665px) {
+      margin-top: 100px;
+    }
+    @media screen and (max-width: 600px) {
+      margin-top: 80px;
     }
     @media screen and (max-width: 490px) {
       display: inline-block;
       font-size: clamp(1rem, 10vw, 2.4rem);
-      margin-top: 15px;
+      margin-top: 60px;
       span {
         position: relative;
         img {
@@ -93,6 +101,16 @@
           left: 10px;
         }
       }
+    }
+
+    @media screen and (max-width: 455px) {
+      margin-top: 50px;
+    }
+    @media screen and (max-width: 390px) {
+      margin-top: 35px;
+    }
+    @media screen and (max-width: 365px) {
+      margin-top: 28px;
     }
     img {
       max-width: 40px;
@@ -105,9 +123,11 @@
   .cards {
     margin-top: 100px;
     display: flex;
-    flex-direction: column;
-    gap: 50px;
-    padding-bottom: 70px;
+    overflow: auto;
+    width: 100%;
+    @media screen and (max-width: 800px) {
+      margin-top: 20px;
+    }
     @media screen and (max-width: 520px) {
       margin-top: 0px;
     }
@@ -115,6 +135,7 @@
       display: flex;
       gap: 40px;
       align-items: start;
+      min-width: 100%;
       &.is-reverse {
         flex-direction: row-reverse;
       }
@@ -139,6 +160,8 @@
       .text {
         color: #fff;
         width: 100%;
+        height: 100%;
+        position: relative;
         p {
           width: 100%;
           line-height: 1.4;
@@ -154,7 +177,35 @@
             font-size: 14px;
           }
         }
+        span {
+          position: absolute;
+          bottom: 10px;
+          right: 10px;
+          font-size: 14px;
+        }
       }
     }
+  }
+  button {
+    width: 40px;
+    height: 40px;
+    border: none;
+    border-radius: 999px;
+    font-size: 20px;
+    color: #adb6c4;
+    background-color: #525f6d;
+    cursor: pointer;
+    margin-top: 20px;
+    transition: opacity 0.12s ease-in-out, background-color 0.12s ease-in-out;
+    &:not(.isDisabled):hover {
+      background-color: #5f6e7e;
+    }
+    &.isDisabled {
+      opacity: 0.5;
+      cursor: default;
+    }
+  }
+  button:not(:first-child) {
+    margin-left: 7px;
   }
 }

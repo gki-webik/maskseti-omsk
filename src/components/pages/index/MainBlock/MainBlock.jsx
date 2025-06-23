@@ -20,9 +20,18 @@ export default function MainBlock() {
           <br />
           <strong>Плести сети - дело, посильное каждому!</strong>
         </h3>
-        <a href="" className="is-btn">
-          ПРИСОЕДИНИТЬСЯ
-        </a>
+        <div className="btns">
+          <a
+            href="https://t.me/masksetiomsk"
+            target="_blank"
+            className="is-btn"
+          >
+            ПРИСОЕДИНИТЬСЯ
+          </a>
+          <a href="/#payment-details" className="is-btn">
+            ПОДДЕРЖАТЬ
+          </a>
+        </div>
       </div>
       <div className="img-mask"></div>
       <div className="bg-photo"></div>

@@ -1,9 +1,21 @@
 @use "./variables" as *;
 @font-face {
   font-family: "NunitoSans";
-  src: url("http://localhost:8873/NunitoSans.ttf");
+  src: url("https://maskseti-omsk.ru/NunitoSans.ttf");
 }
 
+@font-face {
+  font-family: "Montserrat-Regular";
+  src: url("https://maskseti-omsk.ru/Montserrat-Regular.ttf");
+}
+@font-face {
+  font-family: "Montserrat-Bold";
+  src: url("https://maskseti-omsk.ru/Montserrat-Bold.ttf");
+}
+@font-face {
+  font-family: "Montserrat-ExtraBold.ttf";
+  src: url("https://maskseti-omsk.ru/Montserrat-ExtraBold.ttf");
+}
 * {
   box-sizing: border-box;
 }
@@ -25,9 +37,9 @@ html {
   }
 }
 body {
-  background-color: $color--primary-light;
+  background: #444d53;
   color: $color--dark;
-  font-family: "NunitoSans", sans-serif;
+  font-family: "Montserrat-Regular", sans-serif;
   font-weight: 400;
   font-style: normal;
   font-size: 16px;
@@ -35,12 +47,6 @@ body {
   margin: 0;
   padding: 0;
   line-height: 1.3;
-}
-html[data-theme="dark"] {
-  body {
-    background-color: $color--primary-dark;
-    color: $color--light;
-  }
 }
 
 .is-none {
@@ -84,4 +90,72 @@ label:hover {
 
 .is-scroll-none {
   overflow: hidden !important;
+}
+
+h2,
+h3 {
+  font-family: "Montserrat-Bold", sans-serif;
+  font-weight: 900;
+}
+nav.is-kroshki {
+  display: flex;
+  word-break: break-all;
+  flex-wrap: wrap;
+  margin-top: 120px;
+  gap: 5px;
+  padding-left: 20px;
+  a {
+    color: #ddd;
+    font-family: "Montserrat", sans-serif;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 1.5;
+    letter-spacing: 0%;
+    text-decoration: none;
+    vertical-align: middle;
+    transition: color 0.15s ease-in-out;
+    user-select: none;
+    &:not(.is-end):hover {
+      color: #c0cabf;
+    }
+    &:not(:first-child)::before {
+      color: #d1d9d3;
+      content: "/";
+      padding-right: 5px;
+    }
+    &.is-end {
+      cursor: default;
+      color: #bababa;
+    }
+  }
+  @media screen and (max-width: 500px) {
+    margin-top: 120px;
+    padding-left: 0px;
+  }
+}
+
+.paymentLink {
+  padding: 18px 40px;
+  font-size: 17px;
+  font-weight: 800;
+  background: linear-gradient(0deg, #2f3537, #546063);
+  border-radius: 999px;
+  color: #ffffff;
+  width: fit-content;
+  text-decoration: none;
+  transition: opacity 0.1s ease-in;
+  margin-top: 10px;
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+  justify-content: center;
+  &:hover {
+    opacity: 0.9;
+  }
+  @media screen and (max-width: 850px) {
+    font-size: 15px;
+  }
+  @media screen and (max-width: 410px) {
+    font-size: 13px;
+  }
 }

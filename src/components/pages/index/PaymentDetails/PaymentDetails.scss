@@ -1,3 +1,8 @@
+@font-face {
+  font-family: "NunitoSans";
+  src: url("https://maskseti-omsk.ru/NunitoSans.ttf");
+}
+
 .PaymentDetails {
   position: relative;
   padding: 50px;
@@ -30,11 +35,8 @@
     @media screen and (max-width: 760px) {
       -webkit-text-stroke: 1px #c2c6be88;
       text-stroke: 1px #c2c6be88;
-      font-size: 150px !important;
-    }
-    @media screen and (max-width: 490px) {
+      font-size: clamp(2rem, 17vw, 24rem);
       position: absolute;
-      left: -50%;
       top: -15px;
     }
     img {
@@ -62,16 +64,13 @@
     -webkit-background-clip: text;
     color: transparent;
     font-weight: 800;
-    margin-top: -130px;
+    margin-top: -95px;
     display: flex;
     justify-content: start;
     flex-direction: row-reverse;
     margin-left: 50px;
     position: relative;
     z-index: 3;
-    @media screen and (max-width: 735px) {
-      margin-left: 0px;
-    }
     @media screen and (max-width: 500px) {
       font-weight: 900;
       line-height: 1;
@@ -83,15 +82,16 @@
       margin-top: -130px;
     }
     @media screen and (max-width: 979px) {
+      margin-left: 0px;
       margin-top: -100px;
     }
-    @media screen and (max-width: 755px) {
-      margin-top: -120px;
+    @media screen and (max-width: 760px) {
+      margin-top: 0px;
     }
     @media screen and (max-width: 490px) {
       display: inline-block;
       font-size: clamp(1rem, 10vw, 2.4rem);
-      margin-top: 15px;
+      margin-top: 50px;
       span {
         position: relative;
         img {
@@ -104,13 +104,14 @@
     }
     @media screen and (max-width: 460px) {
       font-size: 30px;
+      margin-top: 40px;
       span {
         img {
           width: 30px;
         }
       }
     }
-    @media screen and (max-width: 355px) {
+    @media screen and (max-width: 360px) {
       font-size: 26px;
       span {
         img {
@@ -126,32 +127,54 @@
       margin-right: 15px;
     }
   }
+
+  color: #fff;
+  p {
+    font-size: 20px;
+    line-height: 1.4;
+    @media screen and (max-width: 970px) {
+      font-size: 18px;
+    }
+    @media screen and (max-width: 615px) {
+      font-size: 15px;
+    }
+    @media screen and (max-width: 450px) {
+      font-size: 14px;
+    }
+    strong {
+      font-weight: 800;
+    }
+  }
   .left {
     display: flex;
     flex-direction: column;
     color: #fff;
-    p {
-      font-size: 20px;
-      line-height: 1.4;
-      @media screen and (max-width: 970px) {
-        font-size: 18px;
-      }
-      @media screen and (max-width: 615px) {
-        font-size: 15px;
-      }
-      @media screen and (max-width: 450px) {
-        font-size: 14px;
-      }
-      strong {
-        font-weight: 800;
-      }
-    }
   }
   .img {
     width: 100%;
     display: flex;
-    justify-content: end;
-    align-items: start;
+    flex-direction: column;
+    justify-content: start;
+    gap: 10px;
+    a {
+      width: 100%;
+      &.is-1 {
+        background-color: #4a5460;
+        padding: 15px;
+        border-radius: 15px;
+        text-decoration: none;
+        color: #fff;
+        text-decoration: none;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        max-width: 400px;
+        @media screen and (max-width: 450px) {
+          font-size: 14px;
+        }
+      }
+    }
     @media screen and (max-width: 1065px) {
       justify-content: center;
     }
@@ -160,6 +183,92 @@
       width: 100%;
       user-select: none;
       pointer-events: none;
+    }
+  }
+  form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    max-width: 100%;
+    width: 100%;
+    @media screen and (min-width: 635px) {
+      max-width: fit-content;
+    }
+    margin-top: 20px;
+    .line {
+      display: flex;
+      gap: 10px;
+      &.is-acept {
+        display: block;
+        a {
+          color: #ffffff;
+          text-decoration: underline;
+        }
+      }
+    }
+    label {
+      padding: 13px 18px;
+      outline: 1px solid #6b7582;
+      cursor: pointer;
+      border-radius: 5px;
+      display: block;
+      width: 100%;
+      color: #6b7582;
+      text-align: center;
+      font-family: "NunitoSans", sans-serif;
+      @media screen and (max-width: 379px) {
+        padding: 10px;
+      }
+      &.is-active {
+        outline: 2px solid #6b7582;
+        font-weight: bold;
+      }
+    }
+    input:not([type="checkbox"]) {
+      padding: 13px;
+      font-size: 15px;
+      width: 100%;
+      outline: 1px solid #6b7582;
+      border: none;
+      background: transparent;
+      font-family: "NunitoSans", sans-serif;
+      color: #fff;
+      border-radius: 5px;
+      &::placeholder {
+        color: #6b7582;
+        font-weight: 500;
+      }
+      &.is-active {
+        outline: 2px solid #6b7582;
+        font-weight: bold;
+      }
+    }
+    button {
+      padding: 13px;
+      font-size: 15px;
+      border-radius: 5px;
+      width: 100%;
+      border: none;
+      background: transparent;
+      font-family: "NunitoSans", sans-serif;
+      color: #aab4c1;
+      cursor: pointer;
+      background-color: #424c58;
+      transition: background-color 0.15s ease-in-out, color 0.15s ease-in-out;
+      &:hover {
+        background-color: #484f57;
+        color: #ddd;
+      }
+    }
+  }
+  @media screen and (max-width: 1065px) {
+    .text1 {
+      display: none;
+    }
+  }
+  @media screen and (min-width: 1066px) {
+    .text2 {
+      display: none;
     }
   }
 }

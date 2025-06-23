@@ -1,5 +1,17 @@
 @use "@/styles/variables" as *;
 @font-face {
   font-family: "NunitoSans";
-  src: url("http://localhost:8873/NunitoSans.ttf");
+  src: url("https://maskseti-omsk.ru/NunitoSans.ttf");
+}
+@font-face {
+  font-family: "Montserrat-Regular";
+  src: url("https://maskseti-omsk.ru/Montserrat-Regular.ttf");
+}
+@font-face {
+  font-family: "Montserrat-Bold";
+  src: url("https://maskseti-omsk.ru/Montserrat-Bold.ttf");
+}
+@font-face {
+  font-family: "Montserrat-ExtraBold.ttf";
+  src: url("https://maskseti-omsk.ru/Montserrat-ExtraBold.ttf");
 }

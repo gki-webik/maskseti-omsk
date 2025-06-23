@@ -17,6 +17,9 @@ export default function IsFeedback() {
             <input type="email" placeholder="EMAIL" />
             <textarea name="" id="" placeholder="СООБЩЕНИЕ"></textarea>
             <button type="submit">ОТПРАВИТЬ</button>
+            <a href="/#payment-details" className="paymentLink">
+              Поддержать
+            </a>
           </form>
         </div>
       </div>

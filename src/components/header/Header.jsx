@@ -16,28 +16,31 @@ export default function Header() {
     <div>
       <header>
         <div className="logo">
-          <img src="./logo.png" alt="Logo" />
+          <img src="/logo.png" alt="Logo" />
         </div>
         <div className="links">
           <nav>
-            <a href="#" onClick={closeLinks}>
+            <Link href="/" onClick={closeLinks}>
               Главная
-            </a>
-            <a href="#about-us" onClick={closeLinks}>
+            </Link>
+            <Link href="/#about-us" onClick={closeLinks}>
               О Нас
-            </a>
-            <a href="#latest-news" onClick={closeLinks}>
+            </Link>
+            <Link href="/#latest-news" onClick={closeLinks}>
               Новости
-            </a>
-            <a href="#is-feedback" onClick={closeLinks}>
-              Обратная связь
-            </a>
-            <a href="#payment-details" onClick={closeLinks}>
+            </Link>
+            <Link href="/#payment-details" onClick={closeLinks}>
               Помоги!
-            </a>
+            </Link>
+            <Link href="/#is-feedback" onClick={closeLinks}>
+              Обратная связь
+            </Link>
+            <Link href="/contacts" onClick={closeLinks}>
+              Контакты
+            </Link>
           </nav>
           <nav>
-            <a href="" onClick={closeLinks}>
+            <Link href="" onClick={closeLinks}>
               <svg
                 width="44.000000"
                 height="44.000000"
@@ -89,7 +92,7 @@ export default function Header() {
                 </g>
               </svg>
               Омск, ул. Красный путь, 78
-            </a>
+            </Link>
           </nav>
         </div>
         <div
