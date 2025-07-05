@@ -1,0 +1,77 @@
+.AdminPanel {
+  padding: 20px;
+  main {
+    color: #ddd;
+    @media screen and (min-width: 501px) {
+      padding: 20px;
+    }
+  }
+  details summary {
+    cursor: pointer;
+    user-select: none;
+    padding: 5px 0;
+  }
+  form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin: 20px;
+    @media screen and (max-width: 500px) {
+      margin-left: 0;
+      margin-right: 0;
+    }
+    input::placeholder,
+    textarea::placeholder {
+      color: #ddd;
+    }
+    label {
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+    }
+    textarea {
+      min-height: 260px;
+      resize: vertical;
+    }
+    input,
+    button,
+    textarea {
+      padding: 15px;
+      background-color: #2f363b;
+      color: #ddd;
+      border-radius: 15px;
+      border: none;
+      font-size: 16px;
+      font-family: "NunitoSans", sans-serif;
+    }
+    button {
+      cursor: pointer;
+    }
+  }
+  .items {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 15px;
+    background: #3f474d;
+    border-radius: 15px;
+    margin: 10px 0;
+    .item {
+      line-height: 1.5;
+      button {
+        padding: 5px;
+        cursor: pointer;
+      }
+    }
+  }
+  .exitBtn {
+    margin-top: 40px;
+    border: none;
+    border-radius: 1000px;
+    padding: 10px 20px;
+    font-size: 15px;
+    background-color: #2f363b;
+    cursor: pointer;
+    color: #ddd;
+  }
+}

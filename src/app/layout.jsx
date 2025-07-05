@@ -1,4 +1,3 @@
-"use client";
 import "../styles/globals.scss";
 import "./layout.scss";
 import Header from "@/components/header/Header";
@@ -58,6 +57,9 @@ export default function RootLayout({ children }) {
           <Header />
           {children}
         </div>
+        <span className="is-none">
+          Разработано и опубликовано с ❤️ в проекте «WEBIK» (gki-webik.ru)
+        </span>
       </body>
     </html>
   );

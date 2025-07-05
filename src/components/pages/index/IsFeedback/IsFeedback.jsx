@@ -11,11 +11,19 @@ export default function IsFeedback() {
           </span>
         </h2>
         <div className="form">
-          <form action="">
-            <input type="text" placeholder="ИМЯ" />
-            <input type="text" placeholder="ТЕМА" />
-            <input type="email" placeholder="EMAIL" />
-            <textarea name="" id="" placeholder="СООБЩЕНИЕ"></textarea>
+          <form
+            action="https://wapi.gki-webik.ru/v3/maskseti/sendMail"
+            method="POST"
+          >
+            <input type="text" name="name" required placeholder="ИМЯ" />
+            <input type="text" name="theme" required placeholder="ТЕМА" />
+            <input type="email" name="email" required placeholder="EMAIL" />
+            <textarea
+              id=""
+              name="message"
+              required
+              placeholder="СООБЩЕНИЕ"
+            ></textarea>
             <button type="submit">ОТПРАВИТЬ</button>
             <a href="/#payment-details" className="paymentLink">
               Поддержать

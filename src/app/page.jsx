@@ -1,5 +1,3 @@
-"use client";
-
 import MainBlock from "../components/pages/index/MainBlock/MainBlock";
 import AboutUs from "../components/pages/index/AboutUs/AboutUs";
 import LatestNews from "../components/pages/index/LatestNews/LatestNews";

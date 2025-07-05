@@ -1,40 +1,62 @@
-import React, { useState } from "react";
+"use client";
+
+import { useState, useEffect } from "react";
 import "./LatestNews.scss";
+import LatestNewsClient from "./LatestNewsClient";
 
 export default function LatestNews() {
-  const [currentIndex, setCurrentIndex] = useState(0);
+  const [newsData, setNewsData] = useState([]);
+  const [isLoading, setIsLoading] = useState(true);
 
-  const totalCards = 3; // количество карточек в слайдере
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const apiUrl =
+          process.env.NEXT_PUBLIC_API_URI || "https://wapi.gki-webik.ru";
 
-  const newsData = [
-    {
-      imgSrc: "/images/people1.png",
-      text: `1 ----- Далеко-далеко за словесными горами в стране гласных и согласных живут рыбные тексты. Одна пояс щеке рыбного коварный безорфографичный, инициал необходимыми свой рукопись себя взгляд деревни вдали проектах свое большой которое напоивший знаках, текста однажды языкового города заголовок образ? Злых, составитель всемогущая! Скатился одна реторический рекламных даль не раз которое подпоясал толку деревни о знаках он, прямо оксмокс там. Своего сбить послушавшись инициал страну повстречался, над пор эта предупреждал снова свой речью букв первую о вскоре семь приставка знаках прямо ее проектах правилами переписали. Она, букв переписывается точках, первую снова живет, раз предупредила залетают назад которой пунктуация дорогу предложения лучше своего жизни если!`,
-      date: "11.02.2023",
-    },
-    {
-      imgSrc: "/images/people1.png",
-      text: `2 ----- Далеко-далеко за словесными горами в стране гласных и согласных живут рыбные тексты. Одна пояс щеке рыбного коварный безорфографичный, инициал необходимыми свой рукопись себя взгляд деревни вдали проектах свое большой которое напоивший знаках, текста однажды языкового города заголовок образ? Злых, составитель всемогущая! Скатился одна реторический рекламных даль не раз которое подпоясал толку деревни о знаках он, прямо оксмокс там. Своего сбить послушавшись инициал страну повстречался, над пор эта предупреждал снова свой речью букв первую о вскоре семь приставка знаках прямо ее проектах правилами переписали. Она, букв переписывается точках, первую снова живет, раз предупредила залетают назад которой пунктуация дорогу предложения лучше своего жизни если!`,
-      date: "02.12.2024",
-    },
-    {
-      imgSrc: "/images/people1.png",
-      text: `3 ----- Далеко-далеко за словесными горами в стране гласных и согласных живут рыбные тексты. Одна пояс щеке рыбного коварный безорфографичный, инициал необходимыми свой рукопись себя взгляд деревни вдали проектах свое большой которое напоивший знаках, текста однажды языкового города заголовок образ? Злых, составитель всемогущая! Скатился одна реторический рекламных даль не раз которое подпоясал толку деревни о знаках он, прямо оксмокс там. Своего сбить послушавшись инициал страну повстречался, над пор эта предупреждал снова свой речью букв первую о вскоре семь приставка знаках прямо ее проектах правилами переписали. Она, букв переписывается точках, первую снова живет, раз предупредила залетают назад которой пунктуация дорогу предложения лучше своего жизни если!`,
-      date: "12.12.2022",
-    },
-  ];
+        const response = await fetch(
+          `${apiUrl}/v2/maskseti/get/news?nocache=${Math.random()}`,
+          {
+            headers: {
+              Origin: "https://gki-webik.ru",
+              "Content-Type": "application/json",
+              "User-Agent":
+                "Mozilla/5.0 (compatible; NextJS-SSR/1.0; +https://nextjs.org/)",
+            },
+          }
+        );
 
-  const nextSlide = () => {
-    setCurrentIndex((prevIndex) =>
-      prevIndex < totalCards - 1 ? prevIndex + 1 : 0
+        if (!response.ok) {
+          throw new Error(`HTTP error! status: ${response.status}`);
+        }
+
+        const data = await response.json();
+        setNewsData(data.data || []);
+      } catch (error) {
+        console.error("Error fetching data:", error);
+        setNewsData([]);
+      } finally {
+        setIsLoading(false);
+      }
+    };
+
+    fetchData();
+  }, []);
+
+  if (isLoading) {
+    return (
+      <div className="LatestNews" id="latest-news">
+        <h2>НОВОСТИ</h2>
+        <h3>
+          ПОСЛЕДНИЕ СОБЫТИЯ
+          <span>
+            <img src="/logo.png" alt="" />
+          </span>
+        </h3>
+        <div className="loadingBlock">Загрузка...</div>
+      </div>
     );
-  };
-
-  const previousSlide = () => {
-    setCurrentIndex((prevIndex) => (prevIndex > 0 ? prevIndex - 1 : 0));
-  };
-
-  const currentNews = newsData[currentIndex];
+  }
 
   return (
     <div className="LatestNews" id="latest-news">
@@ -45,32 +67,13 @@ export default function LatestNews() {
           <img src="/logo.png" alt="" />
         </span>
       </h3>
-      <div className="cards">
-        <div className="card active">
-          <div className="img">
-            <img src={currentNews.imgSrc} alt="" />
-          </div>
-          <div className="text">
-            <p>{currentNews.text}</p>
-            <span>{currentNews.date}</span>
-          </div>
-        </div>
-      </div>
-      <p>
-        <button
-          onClick={previousSlide}
-          className={currentIndex === 0 ? "isDisabled" : null}
-        >
-          &lt;
-        </button>
-        <button onClick={nextSlide}>&gt;</button>
-      </p>
-      <p>
-        <br />
-        <a href="/#payment-details" className="paymentLink">
-          Поддержать
-        </a>
-      </p>
+      {newsData && newsData.length > 0 ? (
+        <LatestNewsClient newsData={newsData} />
+      ) : (
+        <h4 style={{ color: "#fff", textAlign: "center", padding: "40px" }}>
+          Нет доступных новостей
+        </h4>
+      )}
     </div>
   );
 }

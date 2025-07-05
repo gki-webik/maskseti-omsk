@@ -1,0 +1,39 @@
+@font-face {
+  font-family: "Montserrat-Regular";
+  src: url("https://maskseti-omsk.ru/Montserrat-Regular.ttf");
+}
+.Success {
+  width: 100%;
+  height: calc(100vh - 70px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: #ced6db;
+  padding: 0 20px;
+  font-family: "Montserrat-Regular", sans-serif;
+  h1 {
+    font-size: 90px;
+    font-family: "Montserrat-Regular", sans-serif;
+    font-weight: 900;
+    margin-bottom: 0;
+    text-align: center;
+    padding-bottom: 10px;
+    @media screen and (max-width: 601px) {
+      font-size: 50px;
+    }
+  }
+  h2 {
+    font-size: 40px;
+    margin-top: 0;
+    padding-top: 10px;
+    text-align: center;
+    font-family: "Montserrat-Regular", sans-serif;
+    @media screen and (max-width: 833px) {
+      font-size: 30px;
+    }
+    @media screen and (max-width: 601px) {
+      font-size: 25px;
+    }
+  }
+}
